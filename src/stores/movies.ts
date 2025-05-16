@@ -31,7 +31,7 @@ export const useMoviesStore = create(
         // await new Promise(resolve => {
         //   setTimeout(resolve, 2000)
         // }) // 2초 뒤에 실행, 이 코드 자리에서 2초 기다림
-
+        console.log(movieId)
         try {
           const {
             data: { Search: movies = [], Response, Error }
