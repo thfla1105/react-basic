@@ -14,11 +14,11 @@ export default function MovieSearcher() {
         value={searchText}
         onKeyDown={event => {
           if (event.key === 'Enter') {
-            fetchMovies()
+            fetchMovies(searchText)
           }
         }}
       />
-      <button onClick={fetchMovies}>Search</button>
+      <button onClick={() => fetchMovies(searchText)}>Search</button>
     </div>
   )
 }
