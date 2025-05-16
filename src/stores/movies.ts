@@ -22,7 +22,7 @@ export const useMoviesStore = create(
     },
     (set, get) => ({
       setSearchText: (searchText: string) => set({ searchText }),
-      fetchMovies: async () => {
+      fetchMovies: async (movieId: string | undefined) => {
         const { searchText, isLoading } = get()
         if (searchText.length === 0 || !searchText.trim()) return
         if (isLoading) return
