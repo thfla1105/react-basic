@@ -1,0 +1,142 @@
+@import 'tailwindcss';
+/* 기본 리셋 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 폰트와 배경 색상 초기화 */
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* 기본적인 크기와 여백 정의 */
+:root {
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  --default-width: 300px;
+  --default-height: 40px;
+
+  --button-width: 80px;
+  --button-height: 40px;
+
+  --border-radius: 8px;
+}
+
+/* 공통 버튼 스타일 */
+button {
+  width: var(--button-width);
+  height: var(--button-height);
+  padding: 0 var(--spacing-md);
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: #0e0e88;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  background-color: #fb9d1a;
+}
+
+/* 인풋 스타일 */
+input,
+select,
+textarea {
+  width: var(--default-width);
+  height: var(--default-height);
+  padding: 0 var(--spacing-sm);
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+/* 공통 카드 스타일 */
+.card {
+  background-color: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: var(--spacing-md);
+}
+
+/* 공통 레이아웃 클래스 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+}
+
+/* 기존 스타일은 그대로 유지되고 아래에 추가함 */
+
+/* 세로로 컴포넌트를 정렬할 수 있는 레이아웃 박스 */
+.vertical-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md); /* 각 컴포넌트 간 간격 */
+}
+
+/* 예: 여러 카드를 세로로 나열할 때 */
+.component-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* container 내부에서 컴포넌트를 좌우 정렬하고 싶을 경우 */
+.row-stack {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.center-align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-align {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* 반응형 레이아웃 예시 (추가 선택 사항) */
+.grid-auto-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+.button {
+  background-color: #63cf7c;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 80px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .grid-auto-columns {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
